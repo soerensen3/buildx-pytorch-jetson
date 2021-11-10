@@ -17,20 +17,23 @@ There are already wheels for aarch64 pytorch for Python 3.6 by NVidia. However i
     Python 3.9
     CUDA 10.2 [not yet working]
 
-# Get started
+# Building PyTorch
 
 ## Preparation
 
 For the following steps I will assume that you installed a docker version that comes with buildx and the qemu-user-bin-fmt and qemu-user-static packages for your distribution. I will also assume you use GNU/Linux. However the steps will probably more or less apply to other OS's.
 
-### Fedora
+## Example: Installing Docker and Qemu in Fedora
 
     sudo dnf config-manager --add-repo \
         https://download.docker.com/linux/fedora/docker-ce.repo
     sudo dnf install \
         docker-ce \
         qemu-user-binfmt \
-        qemu-user-static 
+        qemu-user-static
 
+## Start the build
+
+    $ ./build.sh
 
 You can use [build.sh](build.sh) to start the build process. When complete it will output the .whl file in the working directory on the host. The script has to be run from the repo's root directory.
