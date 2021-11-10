@@ -1,5 +1,7 @@
-# modified from: https://github.com/flacjacket/docker_images/blob/cuda-tx2/Dockerfile
+# Docker manifest for building pytorch wheels for arm64/aarch64 architecture. Can be built from a different architecture with buildx and qemu.
 
+
+# cuda-devel: modified from: https://github.com/flacjacket/docker_images/blob/cuda-tx2/Dockerfile
 FROM nvcr.io/nvidia/l4t-base:r32.6.1 as cuda-devel
 COPY jetson-ota-public.asc /etc/apt/trusted.gpg.d/jetson-ota-public.asc
 RUN  apt-get update \
